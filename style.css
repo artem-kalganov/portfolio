@@ -396,8 +396,13 @@ body.nav-open .burger span:nth-child(3) {
   max-width: var(--container);
   margin: 0 auto;
   padding-top: 160px;
-  padding-left: clamp(16px, 2vw, 24px);
-  padding-right: clamp(16px, 2vw, 24px);
+}
+
+@media (max-width: 1616px) {
+  .project-page {
+    padding-left: clamp(16px, 2vw, 24px);
+    padding-right: clamp(16px, 2vw, 24px);
+  }
 }
 
 .project-content {
