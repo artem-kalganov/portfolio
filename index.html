@@ -5,11 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Артём — UI/UX Designer</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='24' fill='%231d1d1f'/%3E%3Ctext x='24' y='24' text-anchor='middle' dominant-baseline='central' fill='%23fafafa' font-family='PT Root UI, sans-serif' font-size='16' font-weight='500'%3E%D0%9A%D0%90%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 
@@ -20,10 +17,15 @@
         Калганов Артём
       </a>
       <nav class="nav">
-        <a href="#projects">Проекты</a>
-        <a href="#concepts">Концепты</a>
-        <a href="#contact">Контакты</a>
+        <a href="#projects" onclick="document.body.classList.remove('nav-open')">Проекты</a>
+        <a href="#concepts" onclick="document.body.classList.remove('nav-open')">Концепты</a>
+        <a href="#contact" onclick="document.body.classList.remove('nav-open')">Контакты</a>
       </nav>
+      <button class="burger" onclick="document.body.classList.toggle('nav-open')" aria-label="Меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
@@ -31,7 +33,11 @@
 
     <section class="hero">
       <div class="container">
-        <h1>Я Артём — UI/UX дизайнер. Создаю понятные и приятные интерфейсы, уделяя внимание удобству и качественной визуальной части.</h1>
+        <h1>Я Артём — UI/UX дизайнер. Создаю понятные и приятные интерфейсы, уделяя внимание удобству и качественной визуальной части.</h1>
+        <div class="hero-actions">
+          <a href="https://t.me/deuszy" target="_blank" rel="noopener" class="btn btn-primary">Написать в телеграм</a>
+          <a href="https://drive.google.com/file/d/1bqx3ymb0SW0ic-u68jYj9SdRXZeph9A3/view?usp=sharing" target="_blank" rel="noopener" class="btn btn-secondary">Смотреть резюме</a>
+        </div>
       </div>
     </section>
 
@@ -39,65 +45,41 @@
 
       <article class="project">
         <div class="project-info">
-          <h2>CRM для медицинского центра</h2>
+          <h2>Магазин декоративных террариумов «Тайна террариума»</h2>
           <div class="project-meta">
-            <p>Year: 2023</p>
-            <p>Type: MIS/ERP for medical centers · Web application</p>
-            <p>Client: Dema Medical Center, Romania</p>
-            <p>Role: Senior Product Designer · End-to-end</p>
-            <p>Status: In active development · Under NDA</p>
+            <p><span class="meta-label">Год:</span> 2026</p>
+            <p><span class="meta-label">Тип проекта:</span> E-commerce · Интернет-магазин</p>
+            <p><span class="meta-label">Платформа:</span> Web</p>
+            <p><span class="meta-label">Роль:</span> UX/UI-дизайнер</p>     
+            <p><span class="meta-label">О проекте:</span> Интернет-магазин декоративных террариумов. В проекте проработаны каталог с фильтрами, поиск, избранное, корзина, оформление заказа, личный кабинет и страница о магазине. Все страницы собраны на основе единого UI Kit с компонентами, вариантами и состояниями.</p>
+            
+          </div>
+          
+          <div class="project-actions">
+            <a href="https://www.figma.com/design/WpAq0OFg0F7AOWV26hiDTa/The-mystery-of-the-terrarium?node-id=0-1&t=ggcYXwFCQcl0QnTV-1" target="_blank" rel="noopener" class="btn btn-primary">Открыть в Figma</a>
+            <a href="project-1.html" class="btn btn-secondary">Смотреть проект</a>
           </div>
         </div>
-        <a href="project-1.html" class="project-image">
-          <img src="img/cover-1.png" alt="Превью проекта CRM для медицинского центра">
-          <div class="project-button">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M7 17L17 7M17 7H9M17 7V15" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </a>
+        <div class="project-image">
+          <img src="img/cover-1.png" alt="Превью проекта Тайна Террариума">
+        </div>
       </article>
 
       <article class="project">
         <div class="project-info">
-          <h2>Тайна Террариума</h2>
+          <h2>Domtepla</h2>
           <div class="project-meta">
-            <p>Year: 2023</p>
-            <p>Type: Educational game · Mobile & Web</p>
-            <p>Client: Internal project</p>
-            <p>Role: UI/UX Designer · End-to-end</p>
-            <p>Status: Released</p>
+            <p>Год: 2026</p>
+            <p>Тип проекта: E-commerce · Интернет-магазин</p>
+            <p>Платформа: Web</p>
+          </div>
+          <div class="project-actions">
+            <a href="project-2.html" class="btn btn-primary">Смотреть проект</a>
           </div>
         </div>
-        <a href="project-2.html" class="project-image">
-          <img src="img/cover-2.png" alt="Превью проекта Тайна Террариума">
-          <div class="project-button">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M7 17L17 7M17 7H9M17 7V15" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </a>
-      </article>
-
-      <article class="project">
-        <div class="project-info">
-          <h2>Приложение для доставки</h2>
-          <div class="project-meta">
-            <p>Year: 2024</p>
-            <p>Type: Food delivery · Mobile app</p>
-            <p>Client: Startup</p>
-            <p>Role: Product Designer · End-to-end</p>
-            <p>Status: Launched</p>
-          </div>
+        <div class="project-image">
+          <img src="img/cover-2.png" alt="Превью проекта Domtepla">
         </div>
-        <a href="project-3.html" class="project-image">
-          <img src="img/cover-3.png" alt="Превью проекта приложения для доставки">
-          <div class="project-button">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M7 17L17 7M17 7H9M17 7V15" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </a>
       </article>
 
     </section>
@@ -105,11 +87,11 @@
     <section class="concepts" id="concepts">
       <h2 class="section-title">Концепты</h2>
       <div class="concepts-grid">
-        <img src="img/4/concepts-1.png" alt="Концепт 1" class="col-1-2">
-        <img src="img/4/concepts-2.png" alt="Концепт 2" class="col-3">
-        <img src="img/4/concepts-4.png" alt="Концепт 4" class="col-1">
-        <img src="img/4/concepts-5.png" alt="Концепт 5" class="col-2-3">
-        <img src="img/4/concepts-6.png" alt="Концепт 6" class="col-1-2">
+        <img src="img/concepts-1.png" alt="Концепт 1" class="col-1-2">
+        <img src="img/concepts-2.png" alt="Концепт 2" class="col-3">
+        <img src="img/concepts-4.png" alt="Концепт 4" class="col-1">
+        <img src="img/concepts-5.png" alt="Концепт 5" class="col-2-3">
+        <img src="img/concepts-6.png" alt="Концепт 6" class="full-width">
       </div>
     </section>
 
@@ -118,10 +100,10 @@
   <footer class="footer" id="contact">
     <div class="footer-inner">
       <div class="footer-contacts">
-        <a href="https://t.me/deyszy" target="_blank" rel="noopener">Telegram: @deyszy</a>
-        <a href="mailto:artem_kalganov@vk.com">artem_kalganov@vk.com</a>
+        <span>Телеграм: <a href="https://t.me/deuszy" target="_blank" rel="noopener">@deuszy</a></span>
+        <span>Почта: <a href="mailto:artem_kalganov@vk.com">artem_kalganov@vk.com</a></span>
       </div>
-      <p class="footer-copy">&copy; 2025 Калганов Артём</p>
+      <p class="footer-copy">&copy; 2026 Калганов Артём</p>
     </div>
   </footer>
 
