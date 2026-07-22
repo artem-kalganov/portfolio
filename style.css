@@ -1,4 +1,32 @@
 /* ==========================
+   FONTS
+========================== */
+
+@font-face {
+  font-family: "PT Root UI";
+  src: url("fonts/PTRootUI-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PT Root UI";
+  src: url("fonts/PTRootUI-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PT Root UI";
+  src: url("fonts/PTRootUI-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================
    RESET & VARIABLES
 ========================== */
 
@@ -16,8 +44,8 @@
   --section-gap: 200px;
   --transition: 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
 
-  --bg: #ffffff;
-  --text: #000000;
+  --bg: #fafafa;
+  --text: #1d1d1f;
   --bg-dark: #0e0e0e;
   --text-dark: #ffffff;
 }
@@ -27,7 +55,8 @@ html {
 }
 
 body {
-  font-family: "Golos Text", sans-serif;
+  font-family: "PT Root UI", sans-serif;
+  font-weight: 500;
   background: var(--bg);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
@@ -59,9 +88,27 @@ a {
    CONTAINER
 ========================== */
 
-.container {
+.container,
+.projects,
+.concepts {
   max-width: var(--container);
   margin: 0 auto;
+  padding-left: clamp(16px, 2vw, 24px);
+  padding-right: clamp(16px, 2vw, 24px);
+}
+
+.project-page {
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+@media (min-width: 1617px) {
+  .container,
+  .projects,
+  .concepts {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 /* ==========================
@@ -81,14 +128,29 @@ body.project-page-dark .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: var(--content);
+  padding-left: clamp(16px, 2vw, 24px);
+  padding-right: clamp(16px, 2vw, 24px);
+}
+
+@media (min-width: 1617px) {
+  .header .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
   font-size: 20px;
   font-weight: 500;
+  transition: opacity var(--transition);
+}
+
+.logo:hover {
+  color: #247BFF;
 }
 
 .logo-avatar {
@@ -106,11 +168,52 @@ body.project-page-dark .header {
 .nav a {
   font-size: 18px;
   line-height: 24px;
-  transition: opacity var(--transition);
+  font-weight: 500;
+  transition: color var(--transition);
 }
 
 .nav a:hover {
-  opacity: 0.5;
+  color: #247BFF;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 110;
+  gap: 6px;
+  padding: 0;
+}
+
+.burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all var(--transition);
+}
+
+body.project-page-dark .burger span {
+  background: var(--text-dark);
+}
+
+body.nav-open .burger span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+body.nav-open .burger span:nth-child(2) {
+  opacity: 0;
+}
+
+body.nav-open .burger span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 /* ==========================
@@ -127,10 +230,17 @@ body.project-page-dark .header {
   margin: 0 auto;
 
   font-size: clamp(28px, 4vw, 48px);
-  font-weight: 500;
-  line-height: 1.35;
-  letter-spacing: -0.38px;
+  font-weight: 700;
+  line-height: 58px;
+  letter-spacing: -0.008em;
   text-align: center;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 48px;
 }
 
 /* ==========================
@@ -138,8 +248,7 @@ body.project-page-dark .header {
 ========================== */
 
 .projects {
-  max-width: var(--container);
-  margin: 0 auto;
+  margin-top: var(--section-gap);
 }
 
 .project:not(:last-child) {
@@ -166,7 +275,7 @@ body.project-page-dark .header {
   grid-row: 1;
 
   font-size: clamp(24px, 3.5vw, 40px);
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.35;
   letter-spacing: -0.24px;
 }
@@ -177,20 +286,36 @@ body.project-page-dark .header {
 }
 
 .project-meta p {
-  font-size: clamp(14px, 1.5vw, 18px);
+  font-size: clamp(16px, 1.5vw, 18px);
   line-height: 1.55;
+  font-weight: 500;
 }
 
 .project-meta p:not(:last-child) {
   margin-bottom: 8px;
 }
 
+.meta-label {
+  color: rgba(29, 29, 31, 0.6);
+}
+
+.project-description {
+  grid-column: 2;
+  grid-row: 2 / 4;
+  align-self: start;
+
+  font-size: clamp(16px, 1.5vw, 18px);
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+
+
 /* ==========================
    PROJECT COVER
 ========================== */
 
 .project-image {
-  position: relative;
   display: block;
   width: 100%;
   height: 800px;
@@ -204,61 +329,63 @@ body.project-page-dark .header {
   height: 100%;
   object-fit: cover;
   border-radius: var(--radius);
-  transform: scale(1);
-  transition:
-    transform var(--transition),
-    border-radius var(--transition);
 }
 
 /* ==========================
-   PROJECT BUTTON
+   PROJECT ACTIONS
 ========================== */
 
-.project-button {
-  position: absolute;
-  right: 32px;
-  bottom: 32px;
-
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: #fff;
+.project-actions {
+  grid-column: 1;
+  grid-row: 3;
 
   display: flex;
+  flex-direction: row;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.btn {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-
+  padding: 16px 32px;
+  font-family: "PT Root UI", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  border-radius: 16px;
+  cursor: pointer;
   transition:
-    transform var(--transition),
-    background var(--transition);
+    filter var(--transition),
+    background var(--transition),
+    transform var(--transition);
+  white-space: nowrap;
 }
 
-.project-button svg {
-  transition: transform var(--transition);
+.btn:hover {
+  filter: brightness(0.9);
 }
 
-/* ==========================
-   HOVER & ACTIVE
-========================== */
-
-.project-image:hover img {
-  transform: scale(1.02);
+.btn:active {
+  transform: scale(0.97);
 }
 
-.project-image:hover .project-button {
-  transform: scale(1.06);
+.btn-primary {
+  background: #247BFF;
+  color: #fff;
+  border: none;
 }
 
-.project-image:hover .project-button svg {
-  transform: rotate(45deg);
+.btn-secondary {
+  background: rgba(36, 123, 255, 0.16);
+  color: #247BFF;
+  border: none;
 }
 
-.project-image:active img {
-  transform: scale(0.986);
-}
-
-.project-image:active .project-button {
-  transform: scale(0.98);
+.btn-secondary:hover {
+  background: rgba(36, 123, 255, 0.24);
+  filter: none;
 }
 
 /* ==========================
@@ -268,14 +395,16 @@ body.project-page-dark .header {
 .project-page {
   max-width: var(--container);
   margin: 0 auto;
-  padding-top: 200px;
+  padding-top: 160px;
+  padding-left: clamp(16px, 2vw, 24px);
+  padding-right: clamp(16px, 2vw, 24px);
 }
 
 .project-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: var(--gap);
   margin-top: 80px;
 }
 
@@ -299,6 +428,84 @@ body.project-page-dark .header {
   border-radius: var(--radius);
 }
 
+.media-pair {
+  width: 100%;
+  max-width: 1664px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: stretch;
+}
+
+.media-left,
+.media-right {
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.media-left {
+  aspect-ratio: 1920 / 1561;
+}
+
+.media-left video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.media-right {
+  background: #EDEDED;
+}
+
+.media-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.project-section {
+  max-width: var(--content);
+  margin: 80px auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--gap);
+  row-gap: 40px;
+}
+
+.project-section h3 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.section-col {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.project-section p {
+  font-size: clamp(16px, 1.5vw, 18px);
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+.project-info,
+.project-section {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (min-width: 1617px) {
+  .project-info,
+  .project-section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 /* ==========================
    CONCEPTS
 ========================== */
@@ -314,7 +521,7 @@ body.project-page-dark .header {
   margin: 0 auto;
 
   font-size: clamp(24px, 3.5vw, 40px);
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.35;
   letter-spacing: -0.24px;
   margin-bottom: 40px;
@@ -345,7 +552,7 @@ body.project-page-dark .header {
   max-width: var(--container);
   margin: var(--section-gap) auto 0;
   padding: 0 24px;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-top: 1px solid rgba(29, 29, 31, 0.08);
 }
 
 body.project-page-dark .footer {
@@ -356,31 +563,33 @@ body.project-page-dark .footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 32px 0;
+  padding: 24px 0;
 }
 
 .footer-contacts {
   display: flex;
-  gap: 40px;
+  gap: 48px;
 }
 
 .footer-contacts a {
-  font-size: 14px;
-  opacity: 0.45;
-  transition: opacity var(--transition);
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  transition: color var(--transition);
 }
 
 .footer-contacts a:hover {
-  opacity: 1;
+  color: #247BFF;
 }
 
 .footer-copy {
-  font-size: 14px;
-  opacity: 0.3;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
 }
 
 /* ==========================
-   RESPONSIVE — Tablet & small laptop
+   RESPONSIVE
 ========================== */
 
 @media (max-width: 1440px) {
@@ -402,10 +611,6 @@ body.project-page-dark .footer {
   }
 }
 
-/* ==========================
-   RESPONSIVE — Tablet
-========================== */
-
 @media (max-width: 1024px) {
   :root {
     --gap: 40px;
@@ -413,7 +618,7 @@ body.project-page-dark .footer {
   }
 
   .hero {
-    padding-top: 160px;
+    padding-top: 140px;
   }
 
   .project-image {
@@ -430,10 +635,6 @@ body.project-page-dark .footer {
   }
 }
 
-/* ==========================
-   RESPONSIVE — Mobile
-========================== */
-
 @media (max-width: 768px) {
   :root {
     --gap: 24px;
@@ -441,29 +642,79 @@ body.project-page-dark .footer {
     --radius: 16px;
   }
 
-  .container,
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
   .projects,
-  .project-page {
-    padding-left: 24px;
-    padding-right: 24px;
+  .concepts {
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .header {
     padding: 16px 0;
   }
 
+  .project-info,
+  .project-section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .burger {
+    display: flex;
+  }
+
   .nav {
-    gap: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition);
+  }
+
+  body.project-page-dark .nav {
+    background: var(--bg-dark);
+  }
+
+  body.nav-open .nav {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav a {
+    font-size: 24px;
   }
 
   .hero {
-    padding-top: 160px;
+    padding-top: 140px;
   }
 
   .hero h1 {
-    text-align: left;
+    text-align: center;
     margin: 0;
     font-size: clamp(22px, 5vw, 28px);
+    line-height: 1.35;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
   }
 
   .project-info {
@@ -472,21 +723,23 @@ body.project-page-dark .footer {
   }
 
   .project-image {
-    height: 280px;
+    height: 360px;
     margin-top: 40px;
   }
 
-  .project-button {
-    right: 16px;
-    bottom: 16px;
-    width: 40px;
-    height: 40px;
+  .project-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .project-actions .btn {
+    width: 100%;
   }
 
   .project-page {
     padding-top: 100px;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .project-content {
@@ -494,8 +747,19 @@ body.project-page-dark .footer {
     gap: 16px;
   }
 
+  .project-section {
+    grid-template-columns: 1fr;
+  }
+
+  .media-pair {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
   .concepts .section-title {
     max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .concepts-grid {
@@ -510,12 +774,13 @@ body.project-page-dark .footer {
 
   .footer-inner {
     flex-direction: column;
-    gap: 16px;
-    text-align: center;
+    align-items: flex-start;
+    gap: 24px;
   }
 
   .footer-contacts {
-    gap: 24px;
+    flex-direction: column;
+    gap: 8px;
   }
 
   .video-wrapper {
@@ -527,21 +792,12 @@ body.project-page-dark .footer {
   }
 }
 
-/* ==========================
-   RESPONSIVE — Small mobile
-========================== */
-
 @media (max-width: 480px) {
-  .header .container {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .nav {
-    gap: 16px;
+  .hero {
+    padding-top: 120px;
   }
 
   .project-image {
-    height: 200px;
+    height: 280px;
   }
 }
