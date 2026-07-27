@@ -574,6 +574,8 @@ body.project-page-dark .footer {
 .footer-contacts {
   display: flex;
   gap: 48px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .footer-contacts a {
