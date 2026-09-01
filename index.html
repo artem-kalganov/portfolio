@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Артём — UI/UX Designer</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='24' fill='%231d1d1f'/%3E%3Ctext x='24' y='24' text-anchor='middle' dominant-baseline='central' fill='%23fafafa' font-family='PT Root UI, sans-serif' font-size='16' font-weight='500'%3E%D0%9A%D0%90%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <a href="https://artem-kalganov.github.io/portfolio" class="logo">
+        <img src="img/logo.webp" alt="" class="logo-avatar">
+        Калганов Артём
+      </a>
+      <nav class="nav">
+        <a href="https://artem-kalganov.github.io/portfolio/#projects" onclick="document.body.classList.remove('nav-open')">Проекты</a>
+        <a href="https://artem-kalganov.github.io/portfolio/#concepts" onclick="document.body.classList.remove('nav-open')">Концепты</a>
+        <a href="https://artem-kalganov.github.io/portfolio/#contact" onclick="document.body.classList.remove('nav-open')">Контакты</a>
+      </nav>
+      <button class="burger" onclick="document.body.classList.toggle('nav-open')" aria-label="Меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container">
+        <h1>Я Артём — UI/UX дизайнер. Создаю понятные и приятные интерфейсы, уделяя внимание удобству и качественной визуальной части.</h1>
+        <div class="hero-actions">
+          <a href="https://drive.google.com/file/d/16yyclF8yvlcaTzQp3iTrguS4uuoT93HE/view?usp=sharing" target="_blank" rel="noopener" class="btn btn-primary">Резюме<span class="btn-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7" stroke="#2534FA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 7H9M17 7v8" stroke="#2534FA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+          <a href="https://t.me/deuszy" target="_blank" rel="noopener" class="btn btn-secondary">Связаться со мной</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+
+      <article class="project">
+        <div class="project-info">
+          <h2>Магазин декоративных террариумов «Тайна террариума»</h2>
+          <div class="project-meta">
+            <p><span class="meta-label">Год:</span> 2026</p>
+            <p><span class="meta-label">Тип проекта:</span> E-commerce · Интернет-магазин</p>
+            <p><span class="meta-label">Платформа:</span> Web</p>
+            <p><span class="meta-label">Роль:</span> UX/UI-дизайнер</p>     
+            <p><span class="meta-label">О проекте:</span> Интернет-магазин декоративных террариумов с фильтром по сложности ухода и рекомендациями по содержанию. В проекте проработаны каталог с фильтрами, поиск, избранное, корзина, оформление заказа, личный кабинет и страница о магазине. Все страницы собраны на основе единого UI Kit с компонентами, вариантами и состояниями.</p>
+            
+          </div>
+          
+          <div class="project-actions">
+            <a href="project-1.html" class="btn btn-primary">Открыть проект</a>
+            <a href="https://www.figma.com/design/dVkXCCu4kQmQVxnV9xtjGE/The-mystery-of-the-terrarium?node-id=0-1&t=Lebrq7dGiEWW8AGJ-1" target="_blank" rel="noopener" class="btn btn-secondary">Открыть в Figma</a>
+          </div>
+        </div>
+        <div class="project-image">
+          <img src="img/cover-1.webp" alt="Превью проекта Тайна Террариума">
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-info">
+          <h2>Domtepla</h2>
+          <div class="project-meta">
+            <p><span class="meta-label">Год:</span> 2026</p>
+            <p><span class="meta-label">Тип проекта:</span> Корпоративный сайт</p>
+            <p><span class="meta-label">Платформа:</span> Web</p>
+            <p><span class="meta-label">Роль:</span> UX/UI-дизайнер</p>
+            <p><span class="meta-label">О проекте:</span> Концепт современного сайта для строительной компании, специализирующейся на загородных домах. Основная цель — создать удобный и интуитивно понятный ресурс с акцентом на простую навигацию и выделение ключевых услуг для быстрого поиска информации.</p>
+          </div>
+          <div class="project-actions">
+            <a href="project-2.html" class="btn btn-primary">Открыть проект</a>
+          </div>
+        </div>
+        <div class="project-image">
+          <img src="img/cover-2.webp" alt="Превью проекта Domtepla">
+        </div>
+      </article>
+
+    </section>
+
+    <section class="concepts" id="concepts">
+      <h2 class="section-title">Концепты</h2>
+      <div class="concepts-grid">
+        <img src="img/concepts-1.webp" alt="Концепт 1" class="col-1-2">
+        <img src="img/concepts-2.webp" alt="Концепт 2" class="col-3">
+        <img src="img/concepts-4.webp" alt="Концепт 4" class="col-1">
+        <img src="img/concepts-5.webp" alt="Концепт 5" class="col-2-3">
+        <img src="img/concepts-6.webp" alt="Концепт 6" class="full-width">
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="footer-inner">
+      <div class="footer-contacts">
+        <span>Телеграм: <a href="https://t.me/deuszy" target="_blank" rel="noopener">@deuszy</a></span>
+        <span>Почта: <a href="mailto:artem_kalganov@vk.com">artem_kalganov@vk.com</a></span>
+      </div>
+      <p class="footer-copy">&copy; 2026 Калганов Артём</p>
+    </div>
+  </footer>
+
+</body>
+</html>

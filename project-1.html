@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Магазин декоративных террариумов «Тайна террариума»</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='24' fill='%231d1d1f'/%3E%3Ctext x='24' y='24' text-anchor='middle' dominant-baseline='central' fill='%23fafafa' font-family='PT Root UI, sans-serif' font-size='16' font-weight='500'%3E%D0%9A%D0%90%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <a href="https://artem-kalganov.github.io/portfolio" class="logo">
+        <img src="img/logo.webp" alt="" class="logo-avatar">
+        Калганов Артём
+      </a>
+      <nav class="nav">
+        <a href="https://artem-kalganov.github.io/portfolio/#projects" onclick="document.body.classList.remove('nav-open')">Проекты</a>
+        <a href="https://artem-kalganov.github.io/portfolio/#concepts" onclick="document.body.classList.remove('nav-open')">Концепты</a>
+        <a href="https://artem-kalganov.github.io/portfolio/#contact" onclick="document.body.classList.remove('nav-open')">Контакты</a>
+      </nav>
+      <button class="burger" onclick="document.body.classList.toggle('nav-open')" aria-label="Меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="project-page">
+
+      <div class="project-info">
+          <h2>Магазин декоративных террариумов «Тайна террариума»</h2>
+          <div class="project-meta">
+            <p><span class="meta-label">Год:</span> 2026</p>
+            <p><span class="meta-label">Тип проекта:</span> E-commerce · Интернет-магазин</p>
+            <p><span class="meta-label">Платформа:</span> Web</p>       
+            <p><span class="meta-label">Роль:</span> UX/UI-дизайнер</p>
+            </div>
+        </div>
+
+
+      <div class="project-section" id="task">
+        <div class="section-col">
+          <h3>Задача</h3>
+          <p>Разработать интерфейс интернет-магазина декоративных террариумов, который охватывает ключевые этапы взаимодействия пользователя: знакомство с ассортиментом, поиск и выбор товаров, оформление заказа и получение информации о магазине.</p>
+          <p>Особое внимание уделить одной из основных пользовательских болей — отсутствию понятной информации об уходе за террариумом. Решить её на уровне интерфейса и заложить в структуру каталога и карточки товара.</p>
+          <p>Собрать все страницы на основе единого UI Kit с проработанными компонентами, вариантами и состояниями для обеспечения консистентности и масштабируемости интерфейса.</p> 
+        </div>
+      </div>
+
+      <div class="project-section" id="problem">
+        <div class="section-col">
+          <h3>Проблема</h3>
+          <p>Пользователи не знают, как правильно ухаживать за террариумом. Инструкции в магазинах общие, без конкретики.</p>
+<p>Отзывы в Яндксе показывают, что среди негативных комментариев часто встречаются жалобы на гибель растений, плесень или гниль. При этом пользователи пишут, что инструкция отсутствовала или была слишком общей, и они действовали на своё усмотрение.</p>
+        </div>
+        <div class="section-col">
+          <h3>Анализ конкурентов</h3>
+          <p>Большинство компаний либо игнорируют информацию об уходе, либо дают её в минимальном объеме, без структуры и персонализации. Пользователь предоставлен сам себе, он не знает, как правильно ухаживать за конкретным террариумом, и вынужден искать информацию на сторонних ресурсах или обращаться в поддержку сайта.</p>
+        </div>
+      </div>
+
+      <div class="project-content">
+        <div class="media-pair">
+          <div class="media-left">
+            <img src="img/project-1/problem-01.webp" alt="Проблема 1">
+          </div>
+          <div class="media-right">
+            <img src="img/project-1/problem-02.webp" alt="Проблема 2">
+          </div>
+        </div>
+      </div>
+
+      <div class="project-section" id="hypothesis">
+        <div class="section-col">
+          <h3>Гипотеза</h3>
+          <p>Если добавить фильтр по сложности ухода и персональные рекомендации в карточку товара и в упаковку товара, пользователям будет проще выбрать подходящий террариум и понять, как ухаживать за ним после покупки.</p>
+          <p>Метрики проверки:</p>
+           <ul>
+            <li>Доля пользователей, которые используют фильтр</li>
+            <li>Количество обращений в поддержку по уходу</li>
+            <li>Процент возвратов или негативных отзывов</li>
+          </ul>
+        </div>
+        <div class="section-col">
+          <h3>Решение</h3>
+          
+          <p>В характеристики товара добавил три уровня сложности ухода с описанием: для новичков, опытных и профессионалов. Это позволяет пользователю оценить свои силы ещё до выбора.</p>
+<p>Вынес уровни в фильтр каталога. Пользователь отсеивает неподходящие варианты и видит только те террариумы, с которыми справится сам или тот, кому он выбирает подарок.</p>
+<p>В карточке товара добавил раздел с инструкцией по уходу с конкретными параметрами для каждого террариума:</p>
+  <ul>
+            <li>Полив</li>
+            <li>Освещение</li>
+            <li>Температура</li>
+            <li>Опрыскивание</li>
+          </ul>
+  
+  <p>Вместо общих фраз пользователь получает готовый план действий.</p>
+        </div>
+      </div>
+
+      <div class="project-content">
+        <div class="media-pair">
+          <div class="media-left">
+            <img src="img/project-1/decision-01.webp" alt="Решение 1">
+          </div>
+          <div class="media-right">
+            <img src="img/project-1/decision-02.webp" alt="Решение 2">
+          </div>
+        </div>
+        <div class="media-pair">
+          <div class="media-left">
+            <img src="img/project-1/decision-03.webp" alt="Решение 3">
+          </div>
+          <div class="media-right">
+            <img src="img/project-1/decision-04.webp" alt="Решение 4">
+          </div>
+        </div>
+        <img src="img/project-1/decision-05.webp" alt="Решение 5">
+      </div>
+
+      <div class="project-section">
+        <div class="section-col">
+          <h3>Главная страница</h3>
+          <p>Главная страница решает задачу быстрого знакомства с магазином. Пользователь сразу видит новинки, понимает специфику продукта и может в один клик перейти в каталог.</p>
+        </div>
+      </div>
+
+      <div class="project-content">
+        <img src="img/project-1/01.webp" alt="Скриншот проекта Тайна Террариума — Экран 1">
+      </div>
+
+      <div class="project-section" id="component">
+        <div class="section-col">
+          <h3>Компонент карточки товара</h3>
+          <p>Карточка товара собрана в&nbsp;виде компонента с&nbsp;вариантами и&nbsp;состояниями. Через свойства компонента можно изменять изображение, отображение скидки, состояние избранного и&nbsp;другие параметры без создания отдельных элементов.</p>
+        </div>
+      </div>
+
+      <div class="project-content">
+        <div class="media-pair">
+          <div class="media-left">
+            <video src="video/1.mp4" autoplay loop muted playsinline></video>
+          </div>
+          <div class="media-right">
+            <img src="img/project-1/card.webp" alt="Карточка товара">
+          </div>
+        </div>
+        
+        <img src="img/project-1/03.webp" alt="Скриншот проекта Тайна Террариума — Экран 3">
+        <img src="img/project-1/05.webp" alt="Скриншот проекта Тайна Террариума — Экран 5">
+        <img src="img/project-1/06.webp" alt="Скриншот проекта Тайна Террариума — Экран 6">
+        <img src="img/project-1/07.webp" alt="Скриншот проекта Тайна Террариума — Экран 7">
+        <img src="img/project-1/08.webp" alt="Скриншот проекта Тайна Террариума — Экран 8">
+        <img src="img/project-1/09.webp" alt="Скриншот проекта Тайна Террариума — Экран 9">
+        <img src="img/project-1/10.webp" alt="Скриншот проекта Тайна Террариума — Экран 10">
+        <img src="img/project-1/11.webp" alt="Скриншот проекта Тайна Террариума — Экран 11">
+        <img src="img/project-1/12.webp" alt="Скриншот проекта Тайна Террариума — Экран 12">
+        <img src="img/project-1/13.webp" alt="Скриншот проекта Тайна Террариума — Экран 13">
+        <img src="img/project-1/14.webp" alt="Скриншот проекта Тайна Террариума — Экран 14">
+      </div>
+
+      
+
+      <div class="project-section" id="ui-kit">
+        <div class="section-col">
+          <h3>UI Kit</h3>
+          <p>Для проекта разработан UI&nbsp;Kit, включающий кнопки, чекбоксы, тоглы, инпуты со&nbsp;всеми состояниями, теги, компонент поиска, фильтры и&nbsp;карточку товара. Каждый компонент имеет варианты и&nbsp;состояния, что позволяет собирать страницы из&nbsp;готовых элементов без создания новых.</p>
+        </div>
+      </div>
+      <div class="project-content">
+        <img src="img/project-1/15.webp" alt="UI Kit проекта Тайна Террариума">
+      </div>
+
+      
+
+    </section>
+
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="footer-inner">
+      <div class="footer-contacts">
+        <span>Телеграм: <a href="https://t.me/deuszy" target="_blank" rel="noopener">@deuszy</a></span>
+        <span>Почта: <a href="mailto:artem_kalganov@vk.com">artem_kalganov@vk.com</a></span>
+      </div>
+      <p class="footer-copy">&copy; 2026 Калганов Артём</p>
+    </div>
+  </footer>
+
+</body>
+</html>
