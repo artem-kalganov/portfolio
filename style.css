@@ -326,6 +326,7 @@ body.nav-open .burger span:nth-child(3) {
 }
 
 .btn {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -347,10 +348,13 @@ body.nav-open .burger span:nth-child(3) {
 }
 
 .btn-icon {
-  display: inline-flex;
+  position: absolute;
+  right: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 12px;
   width: 52px;
   height: 52px;
   border-radius: 50%;
@@ -370,9 +374,8 @@ body.nav-open .burger span:nth-child(3) {
 }
 
 .hero-actions .btn-primary {
-  padding: 4px 4px 4px 24px;
-  justify-content: space-between;
-  gap: 24px;
+  position: relative;
+  padding: 4px 74px 4px 24px;
 }
 
 .btn-primary:hover {
@@ -743,8 +746,16 @@ body.nav-open .burger span:nth-child(3) {
   }
 
   .hero-actions {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-actions .btn,
+  .project-actions .btn {
+    width: 280px;
+    max-width: 100%;
   }
 
   .btn {
@@ -752,13 +763,16 @@ body.nav-open .burger span:nth-child(3) {
   }
 
   .btn-icon {
-    width: 40px;
-    height: 40px;
+    height: calc(100% - 8px);
+    width: auto;
+    aspect-ratio: 1;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .hero-actions .btn-primary {
-    padding: 4px 4px 4px 16px;
-    gap: 16px;
+    padding: 16px 52px 16px 24px;
   }
 
   .project-info {
@@ -773,7 +787,7 @@ body.nav-open .burger span:nth-child(3) {
 
   .project-actions {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .project-page {
