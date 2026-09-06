@@ -279,18 +279,6 @@ body.nav-open .burger span:nth-child(3) {
   color: rgba(29, 29, 31, 0.6);
 }
 
-.project-description {
-  grid-column: 2;
-  grid-row: 2 / 4;
-  align-self: start;
-
-  font-size: clamp(16px, 1.5vw, 18px);
-  line-height: 1.55;
-  font-weight: 500;
-}
-
-
-
 /* ==========================
    PROJECT COVER
 ========================== */
@@ -387,13 +375,13 @@ body.nav-open .burger span:nth-child(3) {
 }
 
 .btn-secondary {
-  background: #ebebee;
+  background: #F0F0F0;
   color: #1d1d1f;
   border: none;
 }
 
 .btn-secondary:hover {
-  background: #dfdfe3;
+  background: #e5e5e5;
 }
 
 /* ==========================
@@ -853,5 +841,90 @@ body.nav-open .burger span:nth-child(3) {
 
   .project-image {
     height: 280px;
+  }
+}
+
+/* ==========================
+   BACK BUTTON & BACK TO TOP
+========================== */
+
+/* Back to Projects Button (text + arrow) */
+.back-btn-v2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: var(--content);
+  margin: 0 auto;
+  padding: 24px 24px 40px 24px;
+  font-family: "PT Root UI", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #1d1d1f;
+  transition: color var(--transition);
+}
+
+.back-btn-v2 svg {
+  flex-shrink: 0;
+}
+
+.back-btn-v2:hover {
+  color: #2534FA;
+}
+
+/* Back To Top Floating Button (secondary style) */
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #F0F0F0;
+  color: #1d1d1f;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  transition: opacity var(--transition), transform var(--transition), background var(--transition);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: #e5e5e5;
+}
+
+.back-to-top svg {
+  display: block;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .back-btn-v2 {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 24px;
+  }
+  .back-to-top {
+    bottom: 24px;
+    right: 16px;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (min-width: 1617px) {
+  .back-btn-v2 {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
