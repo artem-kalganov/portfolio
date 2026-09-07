@@ -867,6 +867,13 @@ body.nav-open .burger span:nth-child(3) {
   flex-shrink: 0;
 }
 
+.clean-list li::before {
+  content: none;
+}
+.clean-list li {
+  padding-left: 0;
+}
+
 .back-btn-v2:hover {
   color: #2534FA;
 }
