@@ -61,7 +61,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Базовый отступ между абзацами по умолчанию на всем сайте */
 p + p {
   margin-top: 16px;
 }
@@ -272,16 +271,14 @@ body.nav-open .burger span:nth-child(3) {
 
 .project-meta p {
   font-size: clamp(16px, 1.5vw, 18px);
-  line-height: 1.55;
+  line-height: 24px;
   font-weight: 500;
 }
 
-/* Шаг между строками метаданных («Роль», «Инструменты», «Форматы») */
 .project-meta p + p {
   margin-top: 12px;
 }
 
-/* Отделение описания проекта от технических параметров */
 .project-meta p.project-desc {
   margin-top: 24px;
 }
@@ -496,6 +493,7 @@ body.nav-open .burger span:nth-child(3) {
 
 /* ==========================
    SECTION COLUMN & TYPOGRAPHY
+   (Принцип Single-Direction: отступы только сверху)
 ========================== */
 
 .section-col {
@@ -518,7 +516,7 @@ body.nav-open .burger span:nth-child(3) {
 
 .section-col p {
   font-size: clamp(16px, 1.5vw, 18px);
-  line-height: 1.55;
+  line-height: 24px;
   font-weight: 500;
 }
 
@@ -532,11 +530,11 @@ body.nav-open .burger span:nth-child(3) {
   margin-top: 16px;
 }
 
-/* Список ul */
+/* Список ul: обнуляем дефолтные браузерные стили */
 .section-col ul {
   list-style: none;
   font-size: clamp(16px, 1.5vw, 18px);
-  line-height: 1.55;
+  line-height: 24px;
   font-weight: 500;
 }
 
@@ -545,18 +543,20 @@ body.nav-open .burger span:nth-child(3) {
   margin-top: 12px;
 }
 
-/* Если после списка идет абзац текста — расстояние ровно 24px */
+/* Если после списка снова идет абзац текста — ровно 24px */
 .section-col ul + p {
   margin-top: 24px;
 }
 
-/* Пункты списка: маркер на 0px, текст отодвинут на 16px */
+/* Пункты списка: текст отодвинут от маркера на 16px */
 .section-col li {
   padding-left: 16px;
   position: relative;
   margin: 0;
+  line-height: 24px;
 }
 
+/* Маркер-точка: стоит ровно на 0px по левому краю текста */
 .section-col li::before {
   content: "\00B7";
   position: absolute;
@@ -566,8 +566,15 @@ body.nav-open .burger span:nth-child(3) {
   line-height: inherit;
 }
 
+/* Шаг между пунктами списка — ровно 8px */
 .section-col li + li {
   margin-top: 8px;
+}
+
+.project-section p {
+  font-size: clamp(16px, 1.5vw, 18px);
+  line-height: 24px;
+  font-weight: 500;
 }
 
 /* ==========================
