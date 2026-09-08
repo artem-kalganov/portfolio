@@ -61,6 +61,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Базовый отступ между абзацами по умолчанию на всем сайте */
+p + p {
+  margin-top: 16px;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -236,7 +241,7 @@ body.nav-open .burger span:nth-child(3) {
 }
 
 /* ==========================
-   PROJECT INFO
+   PROJECT INFO & META
 ========================== */
 
 .project-info {
@@ -269,6 +274,16 @@ body.nav-open .burger span:nth-child(3) {
   font-size: clamp(16px, 1.5vw, 18px);
   line-height: 1.55;
   font-weight: 500;
+}
+
+/* Шаг между строками метаданных («Роль», «Инструменты», «Форматы») */
+.project-meta p + p {
+  margin-top: 12px;
+}
+
+/* Отделение описания проекта от технических параметров */
+.project-meta p.project-desc {
+  margin-top: 24px;
 }
 
 .meta-label {
@@ -481,7 +496,6 @@ body.nav-open .burger span:nth-child(3) {
 
 /* ==========================
    SECTION COLUMN & TYPOGRAPHY
-   (Принцип Single-Direction: только margin-top, zero collisions)
 ========================== */
 
 .section-col {
@@ -489,7 +503,6 @@ body.nav-open .burger span:nth-child(3) {
   flex-direction: column;
 }
 
-/* Обнуление всех дефолтных margins у элементов секции */
 .section-col h3,
 .section-col p,
 .section-col ul {
@@ -497,31 +510,29 @@ body.nav-open .burger span:nth-child(3) {
   padding: 0;
 }
 
-/* Заголовок h3: сам по себе не толкает низ */
 .section-col h3 {
   font-size: 24px;
   font-weight: 700;
   line-height: 1.35;
 }
 
-/* Базовые параметры параграфов */
 .section-col p {
   font-size: clamp(16px, 1.5vw, 18px);
   line-height: 1.55;
   font-weight: 500;
 }
 
-/* 1. Любой элемент, идущий сразу после h3, получает ровно 32px сверху */
+/* Отступ под заголовком h3 — ровно 32px */
 .section-col h3 + * {
   margin-top: 32px !important;
 }
 
-/* 2. Расстояние между обычными абзацами текста — ровно 16px */
+/* Расстояние между абзацами внутри секции — ровно 16px */
 .section-col p + p {
   margin-top: 16px;
 }
 
-/* 3. Список ul: выравнивание по левому краю */
+/* Список ul */
 .section-col ul {
   list-style: none;
   font-size: clamp(16px, 1.5vw, 18px);
@@ -529,24 +540,23 @@ body.nav-open .burger span:nth-child(3) {
   font-weight: 500;
 }
 
-/* 4. Расстояние от текста/подводки до первого пункта списка — ровно 12px */
+/* Расстояние от текста до первого пункта списка — ровно 12px */
 .section-col p + ul {
   margin-top: 12px;
 }
 
-/* 5. Если после списка снова идет абзац текста — расстояние ровно 24px */
+/* Если после списка идет абзац текста — расстояние ровно 24px */
 .section-col ul + p {
   margin-top: 24px;
 }
 
-/* 6. Оформление пунктов списка */
+/* Пункты списка: маркер на 0px, текст отодвинут на 16px */
 .section-col li {
   padding-left: 16px;
   position: relative;
   margin: 0;
 }
 
-/* Маркер-точка стоит ровно на 0px по левой линии текста */
 .section-col li::before {
   content: "\00B7";
   position: absolute;
@@ -556,7 +566,6 @@ body.nav-open .burger span:nth-child(3) {
   line-height: inherit;
 }
 
-/* Шаг между самими пунктами списка — ровно 8px */
 .section-col li + li {
   margin-top: 8px;
 }
@@ -872,13 +881,32 @@ body.nav-open .burger span:nth-child(3) {
    BACK BUTTON & BACK TO TOP
 ========================== */
 
+/* Обертка кнопки назад: повторяет ширину и отступы текстовых блоков */
+.back-btn-wrapper {
+  max-width: var(--content);
+  margin: 0 auto;
+  padding: 24px 24px 40px 24px;
+}
+
+@media (min-width: 1617px) {
+  .back-btn-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .back-btn-wrapper {
+    padding: 16px 16px 24px 16px;
+  }
+}
+
+/* Сама кнопка назад */
 .back-btn-v2 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  max-width: var(--content);
-  margin: 0 auto;
-  padding: 24px 24px 40px 24px;
+  padding: 0;
   font-family: "PT Root UI", sans-serif;
   font-size: 18px;
   font-weight: 500;
@@ -894,6 +922,7 @@ body.nav-open .burger span:nth-child(3) {
   color: #2534FA;
 }
 
+/* Плавающая кнопка наверх */
 .back-to-top {
   position: fixed;
   bottom: 32px;
@@ -931,22 +960,10 @@ body.nav-open .burger span:nth-child(3) {
 }
 
 @media (max-width: 768px) {
-  .back-btn-v2 {
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-bottom: 24px;
-  }
   .back-to-top {
     bottom: 24px;
     right: 16px;
     width: 42px;
     height: 42px;
-  }
-}
-
-@media (min-width: 1617px) {
-  .back-btn-v2 {
-    padding-left: 0;
-    padding-right: 0;
   }
 }
