@@ -61,10 +61,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-p + p {
-  margin-top: 12px;
-}
-
 img {
   display: block;
   max-width: 100%;
@@ -469,69 +465,6 @@ body.nav-open .burger span:nth-child(3) {
   row-gap: 40px;
 }
 
-.project-section h3 {
-  margin-top: 0;
-  margin-bottom: 16px;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 1.35;
-}
-
-.section-col {
-  display: flex;
-  flex-direction: column;
-}
-
-.section-col > * + * {
-  margin-top: 40px;
-}
-
-.section-col p + p {
-  margin-top: 12px;
-}
-
-.section-col p + ul,
-.section-col ul + p {
-  margin-top: 12px;
-}
-
-.section-col ul {
-  list-style: none;
-  padding: 0;
-  margin: 6px 0 24px;
-  font-size: clamp(16px, 1.5vw, 18px);
-  line-height: 1.55;
-  font-weight: 500;
-}
-
-.section-col li {
-  padding-left: 20px;
-  position: relative;
-}
-
-.section-col li::before {
-  content: "\00B7";
-  position: absolute;
-  left: 4px;
-}
-
-.section-col li:not(:last-child) {
-  margin-bottom: 8px;
-}
-
-.section-col p:has(+ ul),
-.section-col .list-intro {
-  margin-top: 24px;
-  margin-bottom: 6px;
-  font-weight: 500;
-}
-
-.project-section p {
-  font-size: clamp(16px, 1.5vw, 18px);
-  line-height: 1.55;
-  font-weight: 500;
-}
-
 .project-info,
 .project-section {
   padding-left: 24px;
@@ -544,6 +477,88 @@ body.nav-open .burger span:nth-child(3) {
     padding-left: 0;
     padding-right: 0;
   }
+}
+
+/* ==========================
+   SECTION COLUMN & TYPOGRAPHY
+   (Принцип Single-Direction: только margin-top, zero collisions)
+========================== */
+
+.section-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Обнуление всех дефолтных margins у элементов секции */
+.section-col h3,
+.section-col p,
+.section-col ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Заголовок h3: сам по себе не толкает низ */
+.section-col h3 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+/* Базовые параметры параграфов */
+.section-col p {
+  font-size: clamp(16px, 1.5vw, 18px);
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+/* 1. Любой элемент, идущий сразу после h3, получает ровно 32px сверху */
+.section-col h3 + * {
+  margin-top: 32px !important;
+}
+
+/* 2. Расстояние между обычными абзацами текста — ровно 16px */
+.section-col p + p {
+  margin-top: 16px;
+}
+
+/* 3. Список ul: выравнивание по левому краю */
+.section-col ul {
+  list-style: none;
+  font-size: clamp(16px, 1.5vw, 18px);
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+/* 4. Расстояние от текста/подводки до первого пункта списка — ровно 12px */
+.section-col p + ul {
+  margin-top: 12px;
+}
+
+/* 5. Если после списка снова идет абзац текста — расстояние ровно 24px */
+.section-col ul + p {
+  margin-top: 24px;
+}
+
+/* 6. Оформление пунктов списка */
+.section-col li {
+  padding-left: 16px;
+  position: relative;
+  margin: 0;
+}
+
+/* Маркер-точка стоит ровно на 0px по левой линии текста */
+.section-col li::before {
+  content: "\00B7";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+  line-height: inherit;
+}
+
+/* Шаг между самими пунктами списка — ровно 8px */
+.section-col li + li {
+  margin-top: 8px;
 }
 
 /* ==========================
@@ -857,7 +872,6 @@ body.nav-open .burger span:nth-child(3) {
    BACK BUTTON & BACK TO TOP
 ========================== */
 
-/* Back to Projects Button (text + arrow) */
 .back-btn-v2 {
   display: inline-flex;
   align-items: center;
@@ -880,7 +894,6 @@ body.nav-open .burger span:nth-child(3) {
   color: #2534FA;
 }
 
-/* Back To Top Floating Button (secondary style) */
 .back-to-top {
   position: fixed;
   bottom: 32px;
