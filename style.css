@@ -470,6 +470,8 @@ body.nav-open .burger span:nth-child(3) {
 }
 
 .project-section h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
   font-size: 24px;
   font-weight: 700;
   line-height: 1.35;
@@ -496,7 +498,7 @@ body.nav-open .burger span:nth-child(3) {
 .section-col ul {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 6px 0 24px;
   font-size: clamp(16px, 1.5vw, 18px);
   line-height: 1.55;
   font-weight: 500;
@@ -514,7 +516,14 @@ body.nav-open .burger span:nth-child(3) {
 }
 
 .section-col li:not(:last-child) {
-  margin-bottom: 4px;
+  margin-bottom: 8px;
+}
+
+.section-col p:has(+ ul),
+.section-col .list-intro {
+  margin-top: 24px;
+  margin-bottom: 6px;
+  font-weight: 500;
 }
 
 .project-section p {
@@ -865,13 +874,6 @@ body.nav-open .burger span:nth-child(3) {
 
 .back-btn-v2 svg {
   flex-shrink: 0;
-}
-
-.clean-list li::before {
-  content: none;
-}
-.clean-list li {
-  padding-left: 0;
 }
 
 .back-btn-v2:hover {
