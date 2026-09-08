@@ -1,0 +1,12 @@
+{
+  "name": "portfolio-typography",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Утилита типографики для файлов портфолио на базе npm-пакета typograf",
+  "scripts": {
+    "typograf": "node scripts/typograf.js"
+  },
+  "dependencies": {
+    "typograf": "^7.1.1"
+  }
+}

@@ -974,3 +974,10 @@ body.nav-open .burger span:nth-child(3) {
     height: 42px;
   }
 }
+
+.btn-status {
+  cursor: default;
+  pointer-events: none;
+  color: rgba(29, 29, 31, 0.6);
+  background: #f0f0f0;
+}
