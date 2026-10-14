@@ -149,13 +149,15 @@ a {
 
 .nav {
   display: flex;
-  gap: 40px;
+  gap: 8px;
+  margin-right: -16px;
 }
 
 .nav a {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 26px;
   font-weight: 500;
+  padding: 8px 16px;
   transition: color var(--transition);
 }
 
@@ -270,8 +272,8 @@ body.nav-open .burger span:nth-child(3) {
 }
 
 .project-meta p {
-  font-size: clamp(16px, 1.5vw, 18px);
-  line-height: 24px;
+  font-size: 18px;
+  line-height: 26px;
   font-weight: 500;
 }
 
@@ -284,7 +286,8 @@ body.nav-open .burger span:nth-child(3) {
 }
 
 .meta-label {
-  color: rgba(29, 29, 31, 0.6);
+  color: var(--text);
+  font-weight: 700;
 }
 
 /* ==========================
@@ -330,7 +333,7 @@ body.nav-open .burger span:nth-child(3) {
   font-family: "PT Root UI", sans-serif;
   font-size: 18px;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 26px;
   border-radius: 999px;
   cursor: pointer;
   transition:
@@ -515,8 +518,8 @@ body.nav-open .burger span:nth-child(3) {
 }
 
 .section-col p {
-  font-size: clamp(16px, 1.5vw, 18px);
-  line-height: 24px;
+  font-size: 18px;
+  line-height: 26px;
   font-weight: 500;
 }
 
@@ -533,8 +536,8 @@ body.nav-open .burger span:nth-child(3) {
 /* Список ul: обнуляем дефолтные браузерные стили */
 .section-col ul {
   list-style: none;
-  font-size: clamp(16px, 1.5vw, 18px);
-  line-height: 24px;
+  font-size: 18px;
+  line-height: 26px;
   font-weight: 500;
 }
 
@@ -553,7 +556,7 @@ body.nav-open .burger span:nth-child(3) {
   padding-left: 16px;
   position: relative;
   margin: 0;
-  line-height: 24px;
+  line-height: 26px;
 }
 
 /* Маркер-точка: стоит ровно на 0px по левому краю текста */
@@ -572,8 +575,8 @@ body.nav-open .burger span:nth-child(3) {
 }
 
 .project-section p {
-  font-size: clamp(16px, 1.5vw, 18px);
-  line-height: 24px;
+  font-size: 18px;
+  line-height: 26px;
   font-weight: 500;
 }
 
@@ -637,12 +640,12 @@ body.nav-open .burger span:nth-child(3) {
   display: flex;
   gap: 48px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 26px;
 }
 
 .footer-contacts a {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 26px;
   font-weight: 500;
   transition: color var(--transition);
 }
@@ -653,7 +656,7 @@ body.nav-open .burger span:nth-child(3) {
 
 .footer-copy {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 26px;
   font-weight: 500;
 }
 
@@ -746,7 +749,8 @@ body.nav-open .burger span:nth-child(3) {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 24px;
+    margin-right: 0;
     z-index: 100;
     opacity: 0;
     pointer-events: none;
