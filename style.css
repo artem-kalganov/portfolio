@@ -46,6 +46,7 @@
 
   --bg: #fafafa;
   --text: #1d1d1f;
+  --text-body: #4E4E54;
 }
 
 html {
@@ -131,7 +132,8 @@ a {
   display: flex;
   align-items: center;
   gap: 16px;
-  font-size: 20px;
+  font-size: 18px;
+  line-height: 26px;
   font-weight: 500;
   transition: opacity var(--transition);
 }
@@ -275,10 +277,11 @@ body.nav-open .burger span:nth-child(3) {
   font-size: 18px;
   line-height: 26px;
   font-weight: 500;
+  color: var(--text-body);
 }
 
 .project-meta p + p {
-  margin-top: 12px;
+  margin-top: 8px;
 }
 
 .project-meta p.project-desc {
@@ -321,7 +324,7 @@ body.nav-open .burger span:nth-child(3) {
   display: flex;
   flex-direction: row;
   gap: 16px;
-  margin-top: 8px;
+  margin-top: 0;
 }
 
 .btn {
@@ -521,11 +524,12 @@ body.nav-open .burger span:nth-child(3) {
   font-size: 18px;
   line-height: 26px;
   font-weight: 500;
+  color: var(--text-body);
 }
 
-/* Отступ под заголовком h3 — ровно 32px */
+/* Отступ под заголовком h3 — ровно 24px */
 .section-col h3 + * {
-  margin-top: 32px !important;
+  margin-top: 24px !important;
 }
 
 /* Расстояние между абзацами внутри секции — ровно 16px */
@@ -539,6 +543,7 @@ body.nav-open .burger span:nth-child(3) {
   font-size: 18px;
   line-height: 26px;
   font-weight: 500;
+  color: var(--text-body);
 }
 
 /* Расстояние от текста до первого пункта списка — ровно 12px */
@@ -578,6 +583,7 @@ body.nav-open .burger span:nth-child(3) {
   font-size: 18px;
   line-height: 26px;
   font-weight: 500;
+  color: var(--text-body);
 }
 
 /* ==========================
@@ -658,6 +664,7 @@ body.nav-open .burger span:nth-child(3) {
   font-size: 18px;
   line-height: 26px;
   font-weight: 500;
+  color: var(--text-body);
 }
 
 /* ==========================
